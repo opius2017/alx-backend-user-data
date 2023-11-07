@@ -66,6 +66,7 @@ class BasicAuth(Auth):
             return (None, None)
 
         if ':' in decoded_base64_authorization_header:
+            # Split at the first ':' to handle passwords with ':'
             email, password = decoded_base64_authorization_header.split(':', 1)
             return (email, password)
         else:
