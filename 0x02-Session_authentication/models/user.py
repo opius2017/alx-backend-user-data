@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# user.py
 """ User module
 """
 import hashlib
