@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# base.py
 """ Base module
 """
 from datetime import datetime
