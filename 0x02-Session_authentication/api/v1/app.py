@@ -5,7 +5,7 @@ Route module for the API
 from os import getenv
 from api.v1.views import app_views
 from flask import Flask, jsonify, abort, request
-from flask_cors import (CORS, cross_origin)
+from flask_cors import CORS, cross_origin
 import os
 
 app = Flask(__name__)
@@ -25,13 +25,17 @@ elif AUTH_TYPE == 'basic_auth':
 elif AUTH_TYPE == 'session_auth':
     from api.v1.auth.session_auth import SessionAuth
     auth = SessionAuth()
-elif AUTH_TYPE == 'session_exp_auth':
+elif AUTH_TYPE == 'session_exp_auth':  # Add this block for SessionExpAuth
     from api.v1.auth.session_exp_auth import SessionExpAuth
     auth = SessionExpAuth()
 
 @app.before_request
 def before_request():
-    """Pre-request function for authentication"""
+    """_summary_
+
+    Returns:
+        _type_: _description_
+    """
     if auth is None:
         pass
     else:
