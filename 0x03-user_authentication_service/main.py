@@ -76,7 +76,7 @@ def log_out(session_id: str) -> None:
     }
     response = requests.delete(f'{BASE_URL}/sessions', cookies=cookies)
 
-    msg = {"message": "Bienvenue"}
+    msg = {"message": "Session deleted"}
 
     assert response.status_code == 200
     assert response.json() == msg
